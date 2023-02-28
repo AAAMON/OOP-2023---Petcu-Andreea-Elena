@@ -34,5 +34,17 @@ int main() {
     std::cout << "compare history: " << students_compare_history(s, s1) << '\n';
     std::cout << "compare average: " << students_compare_average(s, s1) << '\n';
 
+    Student students[10];
+    for (int i = 0; i < 10; i++) {
+        students[i].init();
+        students[i].setMath(rand() % 10 + 1);
+        students[i].setEnglish(rand() % 10 + 1);
+        students[i].setHistory(rand() % 10 + 1);
+    }
+    sort_students(students, 10);
+    for (int i = 0; i < 10; i++)
+            std::cout << students[i].getAverage() << '\n';
+
+
     return 0;
 }

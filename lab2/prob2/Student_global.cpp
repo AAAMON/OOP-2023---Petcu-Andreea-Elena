@@ -27,3 +27,11 @@ int students_compare_history (Student s1, Student s2) {
 int students_compare_average (Student s1, Student s2) {
     return compare_numbers(s1.getAverage(), s2.getAverage());
 }
+void sort_students (Student students[], int nr_students) {
+    for (int i = 0; i < nr_students; i++) {
+        for (int j = 0; j < nr_students-i-1; j++) {
+            if (students[j].getAverage() > students[j+1].getAverage()) 
+                std::swap(students[j], students[j+1]);
+        }
+    }
+}
